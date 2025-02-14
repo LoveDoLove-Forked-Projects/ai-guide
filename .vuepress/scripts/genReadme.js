@@ -22,7 +22,7 @@ function genReadme(directory) {
 // 递归生成 Markdown 内容
 function generateContent(directory, dirName) {
   let content = `# ${dirName}\n\n`;
-  content += `> 八股文一网打尽，更多面试题请看[程序员面试刷题神器 - 面试鸭](https://www.mianshiya.com/)\n\n`;
+  content += `>  你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)\n\n`;
 
   // 处理当前目录下的 Markdown 文件
   const files = getFilesInDirectory(directory);
@@ -58,7 +58,7 @@ function generateContent(directory, dirName) {
   }
 
   // 添加底部内容
-  content += `> 八股文一网打尽，更多面试题请看[程序员面试刷题神器 - 面试鸭](https://www.mianshiya.com/)\n\n`;
+  content += `>  你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)\n\n`;
 
   return content;
 }
@@ -69,12 +69,22 @@ function getSubDirectories(directory) {
   return items.filter((item) => item.isDirectory()).map((dir) => path.join(directory, dir.name));
 }
 
-// 获取目录下的所有 Markdown 文件
+// 递归获取目录下的所有 Markdown 文件
 function getFilesInDirectory(directory) {
   const items = fs.readdirSync(directory, { withFileTypes: true });
-  return items
-    .filter((item) => item.isFile() && path.extname(item.name) === ".md")
-    .map((file) => path.join(directory, file.name));
+  let files = [];
+
+  for (const item of items) {
+    const fullPath = path.join(directory, item.name);
+    if (item.isDirectory()) {
+      // 递归获取子目录中的文件
+      files = files.concat(getFilesInDirectory(fullPath));
+    } else if (item.isFile() && path.extname(item.name) === ".md") {
+      files.push(fullPath);
+    }
+  }
+
+  return files;
 }
 
 // 从命令行参数获取目标目录

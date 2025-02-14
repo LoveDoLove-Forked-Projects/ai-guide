@@ -123,3 +123,6 @@ dist
 .pnp.*
 
 /.vuepress/dist/
+
+
+temp.ts
