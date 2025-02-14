@@ -6,9 +6,9 @@ export default [
     title: "DeepSeek使用指南",
     collapsable: false,
     children: [
+      "🔥DeepSeek 小白快速上手指南",
       "DeepSeek API 使用指南",
       "DeepSeek 多种使用连接方式推荐",
-      "DeepSeek 小白快速上手指南",
       "DeepSeek 本地部署教程",
       "如何在iPhone上用语音调用Deepseek",
       "官方 DeepSeek R1 满血版使用指南",

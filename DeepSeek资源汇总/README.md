@@ -8,5 +8,4 @@
 
 [DeepSeek 开源项目](DeepSeek%20开源项目.md)
 
->  你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)
 

@@ -22,9 +22,9 @@ const tags = [
 ];
 
 export default defineConfig({
-  title: "鱼皮的 AI 知识库",
+  title: "鱼皮 AI 知识库",
   description:
-    "鱼皮的 AI 知识库是一个专注于人工智能的知识分享平台，汇集Deepseek、机器学习、深度学习、NLP等AI领域优质教程与资源。提供系统化的AI教程、精选AI资源，助你快速掌握AI技术，成为AI专家！",
+    "鱼皮 AI 知识库 - 免费 DeepSeek 教程｜工具站｜资源库，是一站式开源免费的人工智能知识分享平台，汇集Deepseek、GPT等热门AI工具介绍、使用指南、技巧分享、应用场景、AI变现、行业资讯、教程资源汇总，提供系统化的AI教程、精选AI资源，助你快速掌握AI技术，成为AI专家！",
   head: [
     // 站点图标
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -77,8 +77,8 @@ export default defineConfig({
     [
       "seo",
       {
-        siteTitle: (_, $site) => $site.title,
-        title: ($page) => $page.title,
+        siteTitle: (_, $site) => $site.title + " - 免费 DeepSeek 教程｜工具站｜资源库",
+        title: ($page) => $page.title + " - 免费 DeepSeek 教程｜工具站｜资源库",
         description: ($page) => $page.frontmatter.description || $page.description,
         author: (_, $site) => $site.themeConfig.author || author,
         tags: ($page) => $page.frontmatter.tags || tags,
