@@ -22,7 +22,7 @@ export default {
     },
     {
       label: "编程学习圈",
-      href: "https://yuyuanweb.feishu.cn/wiki/VC1qwmX9diCBK3kidyec74vFnde",
+      href: "https://www.codefather.cn/",
     },
   ],
   copyright: {

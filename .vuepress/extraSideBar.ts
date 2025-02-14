@@ -29,7 +29,7 @@ export default [
     title: "下资料",
     icon: "/icon/xiazai.png",
     popoverTitle:
-      '<span style="font-size:0.8rem;font-weight:bold;">扫码关注站长公众号，回复 <span style="color:red;">学习</span> 获取海量编程学习资源「无任何套路」</span>',
+      '<span style="font-size:0.8rem;font-weight:bold;">扫码关注公众号，回复 <span style="color:red;">ai</span> 获取清华大学 DeepSeek 从入门到精通 PDF</span>',
     popoverUrl: "/qrcode-mpcoder_yupi.jpg",
     popoverDesc: "公众号: 程序员鱼皮",
   },
