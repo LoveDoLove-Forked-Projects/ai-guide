@@ -8,14 +8,21 @@ const path = require("path");
 
 function formatMdContent(content, filePath) {
   // 检查内容是否以一级或二级标题开始
-  const firstLine = content.trim().split("\n")[0];
+  const firstLine = content.trim().split("")[0];
   const hasTitle = /^#\s|^##\s/.test(firstLine);
+  // 获取文件名（不含扩展名）
+  const fileName = path.basename(filePath, path.extname(filePath));
 
   if (!hasTitle) {
-    // 获取文件名（不含扩展名）
-    const fileName = path.basename(filePath, path.extname(filePath));
-    // 添加二级标题
+    // 如果没有标题，添加二级标题
     return `## ${fileName}\n\n${content}`;
+  } else {
+    // 如果有标题，检查标题内容是否与文件名一致
+    const titleContent = firstLine.replace(/^#\s|^##\s/, "").trim();
+    if (titleContent !== fileName) {
+      // 如果标题内容与文件名不一致，在开头添加文件名作为二级标题
+      return `## ${fileName}\n\n${content}`;
+    }
   }
 
   return content;

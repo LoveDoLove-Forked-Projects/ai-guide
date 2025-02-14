@@ -27,7 +27,7 @@ function generateContent(directory, dirName) {
   // 处理当前目录下的 Markdown 文件
   const files = getFilesInDirectory(directory);
   if (files.length > 0) {
-    for (let i = 0; i < Math.min(files.length, 10); i++) {
+    for (let i = 0; i < Math.min(files.length, 100); i++) {
       const file = files[i];
       // 跳过 README.md 文件
       if (path.basename(file).toLowerCase() === "readme.md") {
