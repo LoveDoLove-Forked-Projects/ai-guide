@@ -15,11 +15,12 @@ permalink: /
 >
 > 更多编程知识学习：[https://codefather.cn](https://codefather.cn)
 >
+> 本站地址：[https://ai.codefather.cn](https://ai.codefather.cn)
+> 
 > 欢迎关注我的公众号：【程序员鱼皮】，随时交流
 >
 > ![img](https://pic.yupi.icu/yuyi/1739512392127-5da4baac-bcf8-40fc-83da-68c195853367.png)
-> 
-> 本站地址：[https://ai.codefather.cn](https://ai.codefather.cn)
+
 
 ## 内容导航
 

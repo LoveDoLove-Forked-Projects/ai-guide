@@ -95,6 +95,7 @@ export default {
     position: fixed;
     padding: 16px;
     top 80px;
+    right: 20px;
     height 100vh
     overflow-x hidden
     overflow-y auto

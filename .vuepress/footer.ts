@@ -17,8 +17,8 @@ export default {
       href: "https://www.laoyujianli.com/",
     },
     {
-      label: "鱼聪明 AI",
-      href: "https://www.yucongming.com/",
+      label: "面试鸭",
+      href: "https://www.mianshiya.com/",
     },
     {
       label: "编程学习圈",
