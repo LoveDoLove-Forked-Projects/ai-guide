@@ -96,6 +96,7 @@ export default {
     padding: 16px;
     top 80px;
     right: 20px;
+    max-width: 300px;
     height 100vh
     overflow-x hidden
     overflow-y auto

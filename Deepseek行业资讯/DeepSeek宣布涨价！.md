@@ -57,7 +57,7 @@ DeepSeek-V3等模型
 
 2月9日，阿里云宣布百炼平台全面上线DeepSeek-V3、DeepSeek-R1、DeepSeek-R1-Distill-Qwen-32B等6款全尺寸模型，1元最高可享受200万tokens，即日起，所有用户可直接使用。
 
-官方信息显示，满血版DeepSeek-R1的输入价格为**4元/百万tokens，**可为用户提供强大的数学、代码、自然语言等推理能力，而蒸馏版DeepSeek-R1-Distill-Qwen-7B输入价格仅为**0.5元/百万tokens**，最小尺寸的DeepSeek-R1-Distill-Qwen-1.5B则**面****向用户限时免费**。此外，阿里云百炼还为所有用户提供DeepSeek-R1与DeepSeek-V3 100万的免费tokens。
+官方信息显示，满血版DeepSeek-R1的输入价格为**4元/百万tokens，**可为用户提供强大的数学、代码、自然语言等推理能力，而蒸馏版DeepSeek-R1-Distill-Qwen-7B输入价格仅为**0.5元/百万tokens**，最小尺寸的DeepSeek-R1-Distill-Qwen-1.5B则**面向用户限时免费**。此外，阿里云百炼还为所有用户提供DeepSeek-R1与DeepSeek-V3 100万的免费tokens。
 
 此前，阿里云PAI已支持云上一键部署DeepSeek-V3、DeepSeek-R1及其蒸馏版模型，可为企业和开发者提供更定制化的开发服务。
 

@@ -502,7 +502,7 @@ V3的有监督精调做了以下这些事：
 
 2）利用DeepSeek-R1 模型合成与推理（Reasoning）相关的SFT数据集。这里很有意思，基于R1来SFT V3，再基于V3冷启动R1。感觉上这里有关键的训练信息没有透露，DeepSeek应该还是留了一手。
 
-3）为特定领域（例如代码、数学或一般推理）构建量身定制的专家模型数据合成器。使用复合有监督精调和强化学习训练该专家模型。训练过程中为每个实例生成两种不同类型的 SFT样本：第一种将问题与其原始响应耦合，格式为<problem, original response>，而第二种将系统提示与问题和R1响应合并，格式为<system prompt, problem, R1 response>。
+3）为特定领域（例如代码、数学或一般推理）构建量身定制的专家模型数据合成器。使用复合有监督精调和强化学习训练该专家模型。训练过程中为每个实例生成两种不同类型的 SFT样本：第一种将问题与其原始响应耦合，格式为`<problem, original response>`，而第二种将系统提示与问题和R1响应合并，格式为`<system prompt, problem, R1 response>`。
 
 4）建立高质量提示（Prompt）体系，引导模型形成自身的反馈与验证机制。同时整合了来自R1合成的数据，通过强化学习加强这一能力。
 
@@ -562,7 +562,7 @@ R1-Zero的训练过程具有重要意义：
 
 1）准确度奖励（Accuracy rewards）。评估响应是否正确。
 
-2）格式奖励（Format rewards）。奖励模型将其思考过程置于“<think>”和“</think>”标签之间。
+2）格式奖励（Format rewards）。奖励模型将其思考过程置于“`<think>`”和“`</think>`”标签之间。
 
 ![img](https://pic.yupi.icu/yuyi/1739504724564-16c630a6-8fe8-4e46-a7e5-08b7c0a5633a.png)
 
@@ -592,7 +592,7 @@ DeepSeek-R1训练流程（来源：中存算）
 
 为构建少量的长CoT数据，DeepSeek探索了几种合成方法：使用长CoT 的few-shot提示作为示例，直接提示模型通过反思和验证生成详细回答，以可读格式收集DeepSeek-R1-Zero 输出，并通过人工标注员的后处理来完善结果。在此步骤中收集了数千个冷启动样本以进行精调。
 
-其中可读模式指为每个回答在末尾包含一个摘要，并过滤掉不易阅读的部分。其输出格式为 |special_token|<reasoning_process>|special_token|<summary>。
+其中可读模式指为每个回答在末尾包含一个摘要，并过滤掉不易阅读的部分。其输出格式为 `|special_token|<reasoning_process>|special_token|<summary>`。
 
 ### 5.2.2 面向推理的强化学习
 
