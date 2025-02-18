@@ -64,7 +64,6 @@
 
 ![](https://img.36krcdn.com/hsossms/20250212/v2_5e010c38d5d3414da93b84dead0cabc3@46958_oswg185091oswg1080oswg701_img_000?x-oss-process=image/format,jpg/interlace,1)
 
-图源/DeepSeek GitHub页面 
 
 还有人认为，DeepSeek R1 技惊四座的亮相，以及手机玩家们所展现出的热情迎合，更说明着后者重注AI大模型自研的现状可能被改变。 
 

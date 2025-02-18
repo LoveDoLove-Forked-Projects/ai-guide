@@ -24,8 +24,6 @@ Deepseek风靡中国，轰动世界，成为春节期间中国社会的一股滚
 
 ![](https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2025%2F0214%2F3cfa5c98j00srndwz0023d200sg00itg00it00cf.jpg&thumbnail=660x2147483647&quality=80&type=jpg)  
 
-日本内阁官房长官林芳正
-
 那么，日本政府目前是如何看待DeepSeek的呢？
 
 2 月 3 日，日本政府的个人信息保护委员会在其网站上发表声明指出，Deepseek 的隐私政策只有中文和英文版，日本用户很难理解其内容。而且包含个人信息的数据存储在中国的服务器上，并根据中国的法律法规处理这些数据，存在风险。

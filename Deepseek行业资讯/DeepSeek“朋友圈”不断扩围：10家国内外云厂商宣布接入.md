@@ -1,9 +1,4 @@
 # DeepSeek“朋友圈”不断扩围：10家国内外云厂商宣布接入
-![](https://imgpai.thepaper.cn/newpai/image/1738756689789_1BQiHF_1738756689904.png)
-
-DeepSeek  视觉中国 资料图
-
-DeepSeek成为了海内外各大云厂商的宠儿。
 
 1月20日，中国AI初创公司深度求索（DeepSeek）推出大模型DeepSeek-R1。作为一款开源模型，R1在数学、代码、自然语言推理等任务上的性能能够比肩OpenAI o1模型正式版，并采用MIT许可协议，支持免费商用、任意修改和衍生开发等。截至2月5日，国内外已有众多云平台宣布上线DeepSeek- R1大模型。
 
