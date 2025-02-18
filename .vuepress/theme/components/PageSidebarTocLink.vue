@@ -125,7 +125,7 @@ a.toc-sidebar-link
     padding-top 0.25rem
     padding-bottom 0.25rem
     border-left none
-    font-weight 300
+    font-weight 400
     &.active
       font-weight 500
 .toc-sidebar-depth-4

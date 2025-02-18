@@ -111,7 +111,7 @@ DeepSeek，是一款 **AI 助手应用**，也就是ChatGPT、OpenAI、豆包和
 
 ![img](https://pic.yupi.icu/yuyi/1739499900245-561fd391-d008-4928-b7d5-544c8987c133.webp)
 
-### ![img](https://pic.yupi.icu/yuyi/1739499900050-7121c791-3cf4-4707-9fb1-fbac85bb6fe4.webp)
+![img](https://pic.yupi.icu/yuyi/1739499900050-7121c791-3cf4-4707-9fb1-fbac85bb6fe4.webp)
 
 **②** 生成HTML代码
 

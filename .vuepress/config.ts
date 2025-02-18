@@ -130,7 +130,7 @@ export default defineConfig({
     lastUpdated: "最近更新",
 
     // GitHub 仓库位置
-    repo: "liyupi/codefather",
+    repo: "liyupi/ai-guide",
     docsBranch: "master",
 
     // 编辑链接
