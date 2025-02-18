@@ -74,6 +74,8 @@ export default {
   //height 100vw
   //width 100vw
   //overflow scroll
+
+  
 .toc-container-sidebar
 
   order 2
@@ -135,5 +137,10 @@ export default {
           margin-top: 0;
         & > ol > li
           padding-left: 15px;
-
+.sidebar-group
+  .sidebar-sub-headers
+    display: none;
+.sidebar
+  sidebar-sub-headers
+    
 </style>
