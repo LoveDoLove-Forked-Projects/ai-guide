@@ -6,27 +6,27 @@ export default [
     items: [
       {
         text: "关于DeepSeek",
-        link: "/关于DeepSeek/",
+        link: "/Deepseek/#关于deepseek",
       },
       {
         text: "DeepSeek 使用指南",
-        link: "/DeepSeek使用指南/",
+        link: "/Deepseek/#deepseek使用指南",
       },
       {
         text: "DeepSeek 应用场景",
-        link: "/DeepSeek应用场景/",
+        link: "/Deepseek/#deepSeek应用场景",
       },
       {
         text: "DeepSeek 资源汇总",
-        link: "/DeepSeek资源汇总/",
+        link: "/Deepseek/#deepSeek资源汇总",
       },
       {
         text: "DeepSeek 技术解析",
-        link: "/DeepSeek技术解析/",
+        link: "/Deepseek/#deepseek技术解析",
       },
       {
         text: "DeepSeek 行业资讯",
-        link: "/Deepseek行业资讯/",
+        link: "/Deepseek/#deepseek行业资讯",
       },
     ],
   },

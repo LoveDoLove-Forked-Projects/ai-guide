@@ -141,6 +141,10 @@ export default {
   .sidebar-sub-headers
     display: none;
 .sidebar
-  sidebar-sub-headers
-    
+  .depth-1
+    .sidebar-heading
+      font-size: 16px !important;
+      color: #2c3e50 !important;
+      font-weight: 600 !important;
+
 </style>
