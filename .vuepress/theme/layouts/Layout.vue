@@ -1,5 +1,6 @@
 <template>
   <div
+  
     class="theme-container"
     :class="pageClasses"
     @touchstart="onTouchStart"
@@ -81,6 +82,9 @@ export default {
   },
 
   computed: {
+    isIndexPage() {
+      return this.$route.path === '/'
+    },
     shouldShowNavbar () {
       const { themeConfig } = this.$site
       const { frontmatter } = this.$page
@@ -130,13 +134,15 @@ export default {
         return resolveHeaders(this.$page)
     },
 
-    pageClasses () {
+    pageClasses() {
       const userPageClass = this.$page.frontmatter.pageClass
+      
       return [
         {
           'no-navbar': !this.shouldShowNavbar,
           'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
+          'no-sidebar': !this.shouldShowSidebar,
+          'not-index-content': !this.isIndexPage
         },
         userPageClass
       ]

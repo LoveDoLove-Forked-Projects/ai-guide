@@ -39,7 +39,7 @@ export default {
   components: { PageEdit, PageNav, PageSidebarToc },
   props: ['sidebarItems', 'pageSidebarItems'],
   mounted() {
-    console.log(this.$site,this, 'this.$site')
+    console.log(this.$route.path, this, 'this.$site')
   }
 }
 </script>
@@ -74,6 +74,8 @@ export default {
   //height 100vw
   //width 100vw
   //overflow scroll
+
+  
 .toc-container-sidebar
 
   order 2
@@ -135,5 +137,15 @@ export default {
           margin-top: 0;
         & > ol > li
           padding-left: 15px;
+.not-index-content .sidebar
+  .sidebar-sub-headers
+    display: none;
+.sidebar
+  .depth-1
+    .sidebar-heading
+      font-size: 16px !important;
+      color: #2c3e50 !important;
+      font-weight: 600 !important;
+      opacity 1 !important
 
 </style>
