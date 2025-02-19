@@ -16,11 +16,9 @@
 
 [DeepSeek API 使用指南](DeepSeek使用指南/DeepSeek%20API%20使用指南.md)
 
-[DeepSeek 多种使用连接方式推荐](DeepSeek使用指南/DeepSeek%20多种使用连接方式推荐.md)
+[【汇总】满血版 DeepSeek 第三方使用渠道](DeepSeek使用指南/【汇总】满血版%20DeepSeek%20第三方使用渠道.md)
 
 [🔥DeepSeek 小白快速上手指南](DeepSeek使用指南/🔥DeepSeek%20小白快速上手指南.md)
-
-[官方 DeepSeek R1 满血版使用指南](DeepSeek使用指南/官方%20DeepSeek%20R1%20满血版使用指南.md)
 
 [如何在iPhone上用语音调用Deepseek](DeepSeek使用指南/如何在iPhone上用语音调用Deepseek.md)
 

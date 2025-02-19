@@ -10,10 +10,9 @@ export default [
     collapsable: true,
     children: [
       "DeepSeek使用指南/🔥DeepSeek 小白快速上手指南",
+      "DeepSeek使用指南/【汇总】满血版%20DeepSeek%20第三方使用渠道",
       "DeepSeek使用指南/DeepSeek 本地部署教程",
       "DeepSeek使用指南/DeepSeek API 使用指南",
-      "DeepSeek使用指南/DeepSeek 多种使用连接方式推荐",
-      "DeepSeek使用指南/官方 DeepSeek R1 满血版使用指南",
       "DeepSeek使用指南/如何在iPhone上用语音调用Deepseek",
       "DeepSeek使用指南/普通人能用DeepSeek做什么？20个实用建议",
       {
