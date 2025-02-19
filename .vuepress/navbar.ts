@@ -14,11 +14,11 @@ export default [
       },
       {
         text: "DeepSeek 应用场景",
-        link: "/Deepseek/#deepSeek应用场景",
+        link: "/Deepseek/#deepseek应用场景",
       },
       {
         text: "DeepSeek 资源汇总",
-        link: "/Deepseek/#deepSeek资源汇总",
+        link: "/Deepseek/#deepseek资源汇总",
       },
       {
         text: "DeepSeek 技术解析",

@@ -41,9 +41,12 @@ function generateSidebarConfig(dirPath) {
         return filePath;
       });
       // 将文件路径添加到 config 中
-      filePaths.sort().forEach((filePath) => {
-        config.push(filePath);
-      });
+
+      filePaths
+        .sort((a, b) => a.length - b.length)
+        .forEach((filePath) => {
+          config.push(filePath);
+        });
     }
     if (directories.length > 0) {
       directories.forEach((dir) => {

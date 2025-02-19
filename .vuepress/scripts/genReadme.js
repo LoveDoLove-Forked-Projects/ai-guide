@@ -22,43 +22,50 @@ function genReadme(directory) {
 // 递归生成 Markdown 内容
 function generateContent(directory, dirName) {
   let content = `# ${dirName}\n\n`;
-  content += `>  你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)\n\n`;
+  content += `> 你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)\n\n`;
 
-  // 处理当前目录下的 Markdown 文件
-  const files = getFilesInDirectory(directory);
-  if (files.length > 0) {
-    for (let i = 0; i < Math.min(files.length, 100); i++) {
-      const file = files[i];
-      // 跳过 README.md 文件
-      if (path.basename(file).toLowerCase() === "readme.md") {
-        continue;
-      }
-      const relativePath = path.relative(directory, file)?.replaceAll(" ", "%20");
-      content += `[${path.basename(file, ".md")}](${relativePath})\n\n`;
-    }
-  }
-
-  // 处理子目录
+  // 获取所有一级子目录
   const subDirs = getSubDirectories(directory);
+
+  // 循环处理每个一级子目录
   for (const subDir of subDirs) {
     const subDirName = path.basename(subDir);
 
-    // content += `## [${subDirName}](/${dirName}/${subDirName.replaceAll(" ", "%20")}/)\n`;
-    content += `## ${subDirName} \n`;
-    const subDirFiles = getFilesInDirectory(subDir);
-    for (let i = 0; i < Math.min(subDirFiles.length, 10); i++) {
+    content += `## ${subDirName}\n\n`;
+
+    // 递归获取子目录下的所有 Markdown 文件
+    const subDirFiles = getFilesInDirectory(subDir).sort((a, b) => a.length - b.length);
+
+    for (let i = 0; i < Math.min(subDirFiles.length, 100); i++) {
       const file = subDirFiles[i];
+
       // 跳过 README.md 文件
       if (path.basename(file).toLowerCase() === "readme.md") {
         continue;
       }
+
       const relativePath = path.relative(directory, file)?.replaceAll(" ", "%20");
       content += `[${path.basename(file, ".md")}](${relativePath})\n\n`;
     }
   }
 
+  // 处理当前目录下的 Markdown 文件
+  // const files = getFilesInDirectory(directory);
+  // if (files.length > 0) {
+  //   content += `## 当前目录文件\n\n`;
+  //   for (let i = 0; i < Math.min(files.length, 100); i++) {
+  //     const file = files[i];
+  //     // 跳过 README.md 文件
+  //     if (path.basename(file).toLowerCase() === "readme.md") {
+  //       continue;
+  //     }
+  //     const relativePath = path.relative(directory, file)?.replaceAll(" ", "%20");
+  //     content += `[${path.basename(file, ".md")}](${relativePath})\n\n`;
+  //   }
+  // }
+
   // 添加底部内容
-  content += `>  你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)\n\n`;
+  content += `> 你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)\n\n`;
 
   return content;
 }
