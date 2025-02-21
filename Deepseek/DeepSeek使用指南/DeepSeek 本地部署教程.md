@@ -1,5 +1,6 @@
 ## DeepSeek 本地部署教程
 
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114018681429066&bvid=BV1KYwoevEit&cid=28438497739&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="450"></iframe>
 
 ### 写在前面
 

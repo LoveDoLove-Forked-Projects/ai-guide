@@ -10,11 +10,12 @@ export default [
     collapsable: true,
     children: [
       "DeepSeek使用指南/🔥DeepSeek 小白快速上手指南",
-      "DeepSeek使用指南/【汇总】满血版%20DeepSeek%20第三方使用渠道",
       "DeepSeek使用指南/DeepSeek 本地部署教程",
-      "DeepSeek使用指南/DeepSeek API 使用指南",
       "DeepSeek使用指南/如何在iPhone上用语音调用Deepseek",
+      "DeepSeek使用指南/完整攻略：如何用好DeepSeek，一文汇总！",
+      "DeepSeek使用指南/【汇总】满血版 DeepSeek 第三方使用渠道",
       "DeepSeek使用指南/普通人能用DeepSeek做什么？20个实用建议",
+      "DeepSeek使用指南/2分钟学会 DeepSeek API，竟然比官方更好用！",
       {
         title: "DeepSeek 提问技巧",
         collapsable: true,
@@ -37,8 +38,10 @@ export default [
         children: [
           "DeepSeek应用场景/DeepSeek + 内容创作/3秒让DeepSeek写出爆款小红书",
           "DeepSeek应用场景/DeepSeek + 内容创作/如何利用DeepSeek进行高效内容创作",
+          "DeepSeek应用场景/DeepSeek + 内容创作/AI写小说怎么写？deepseek帮你写小说教程",
           "DeepSeek应用场景/DeepSeek + 内容创作/人有多大胆，地有多大产：如何用DeepSeek写长篇小说",
           "DeepSeek应用场景/DeepSeek + 内容创作/用DeepSeek做小红书真的太牛了！轻轻松松打造爆款笔记",
+          "DeepSeek应用场景/DeepSeek + 内容创作/DeepSeek使用指南：提升公文、新闻与广告文案写作效率的三大技巧 ",
           "DeepSeek应用场景/DeepSeek + 内容创作/用DeepSeek写文章？这4个骚操作让你躺平也能出爆款！（含提示词）",
         ],
       },
@@ -65,6 +68,7 @@ export default [
           "DeepSeek应用场景/DeepSeek + 办公效率/手把手教你在word中接入deepseek，秒生文档材料",
           "DeepSeek应用场景/DeepSeek + 办公效率/DeepSeek嵌入到Excel，提升10倍工作效率，太牛了！",
           "DeepSeek应用场景/DeepSeek + 办公效率/DeepSeek配合KIMI，自动生成PPT，感觉自己要失业了！",
+          "DeepSeek应用场景/DeepSeek + 办公效率/教师必备DeepSeek使用指南来了！5大教学应用场景+实操案例+隐藏用法",
         ],
       },
       {
@@ -80,6 +84,7 @@ export default [
         collapsable: true,
         children: [
           "DeepSeek应用场景/DeepSeek + 编程开发/DeepSeek装进VSCode，编程非常丝滑！",
+          "DeepSeek应用场景/DeepSeek + 编程开发/💗用 DeepSeek 给对象做个网站，她一定感动坏了",
           "DeepSeek应用场景/DeepSeek + 编程开发/教你用DeepSeek+Clien，从0到1开发一个APP",
           "DeepSeek应用场景/DeepSeek + 编程开发/DeepSeek接入Python，一般电脑也能飞速跑，确实可以封神了！",
         ],
@@ -93,6 +98,7 @@ export default [
       "DeepSeek资源汇总/DeepSeek 学习资料",
       "DeepSeek资源汇总/DeepSeek 官方链接",
       "DeepSeek资源汇总/DeepSeek 开源项目",
+      "DeepSeek资源汇总/DeepSeek官方整理的模型应用和工具",
     ],
   },
   {
