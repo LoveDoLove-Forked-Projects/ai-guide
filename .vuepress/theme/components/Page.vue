@@ -9,7 +9,6 @@
               <!--         -->
               <!--      </div>-->
 
-
               <PageNav v-bind="{ sidebarItems }" />
           </div>
 

@@ -22,6 +22,11 @@ permalink: /
 > ![img](https://pic.yupi.icu/yuyi/1739512392127-5da4baac-bcf8-40fc-83da-68c195853367.png)
 
 
+## 精选文章
+- [2分钟学会 DeepSeek API，竟然比官方更好用！](/Deepseek/DeepSeek使用指南/2分钟学会%20DeepSeek%20API，竟然比官方更好用！.md)
+- [💗用 DeepSeek 给对象做个网站，她一定感动坏了](/Deepseek/DeepSeek应用场景/DeepSeek%20+%20编程开发/💗用%20DeepSeek%20给对象做个网站，她一定感动坏了.md)
+- [DeepSeek 本地部署教程](/Deepseek/DeepSeek使用指南/DeepSeek%20本地部署教程.md)
+
 ## 内容导航
 
 ### [关于 DeepSeek](/Deepseek/#关于deepseek)
