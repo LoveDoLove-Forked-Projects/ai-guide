@@ -16,6 +16,7 @@ export default [
       "DeepSeek使用指南/【汇总】满血版 DeepSeek 第三方使用渠道",
       "DeepSeek使用指南/普通人能用DeepSeek做什么？20个实用建议",
       "DeepSeek使用指南/2分钟学会 DeepSeek API，竟然比官方更好用！",
+      "DeepSeek使用指南/最新清华大学DeepSeek使用手册第1-5版，官方完整版PDF免费下载",
       {
         title: "DeepSeek 提问技巧",
         collapsable: true,
@@ -145,6 +146,7 @@ export default [
           "Deepseek行业资讯/2025-02/日本如何看待Deepseek",
           "Deepseek行业资讯/2025-02/DeepSeek带飞科大讯飞？",
           "Deepseek行业资讯/2025-02/DeepSeek如何搅动AI产业？",
+          "Deepseek行业资讯/2025-02/阿里 Qwen 首个推理模型亮相！",
           "Deepseek行业资讯/2025-02/运营商全面接入DeepSeek意味着什么？",
           "Deepseek行业资讯/2025-02/vivo官宣：将深度融合满血版DeepSeek",
           "Deepseek行业资讯/2025-02/不在场的DeepSeek，是巴黎AI峰会真正的主角",
@@ -165,6 +167,7 @@ export default [
           "Deepseek行业资讯/2025-02/如何利用DeepSeek翻身？抓住AI红利，普通人也能逆袭的3个方向",
           "Deepseek行业资讯/2025-02/被DeepSeek刺激到了？文心一言、ChatGPT同时宣布：免费！ ",
           "Deepseek行业资讯/2025-02/DeepSeek“金融朋友圈” 从“争先”到“恐后”，从“好用”到“用好”",
+          "Deepseek行业资讯/2025-02/Anthropic Claude 3.7 Sonnet 发布：推理能力再进化，编码效率突破天际！",
         ],
       },
     ],
