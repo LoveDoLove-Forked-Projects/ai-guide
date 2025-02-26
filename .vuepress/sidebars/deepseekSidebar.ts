@@ -16,6 +16,7 @@ export default [
       "DeepSeek使用指南/【汇总】满血版 DeepSeek 第三方使用渠道",
       "DeepSeek使用指南/普通人能用DeepSeek做什么？20个实用建议",
       "DeepSeek使用指南/2分钟学会 DeepSeek API，竟然比官方更好用！",
+      "DeepSeek使用指南/最新清华大学DeepSeek使用手册第1-5版，官方完整版PDF免费下载",
       {
         title: "DeepSeek 提问技巧",
         collapsable: true,
@@ -139,6 +140,8 @@ export default [
         title: "2025-02",
         collapsable: true,
         children: [
+          "Deepseek行业资讯/2025-02/阿里 Qwen 首个推理模型亮相！",
+          "Deepseek行业资讯/2025-02/Anthropic Claude 3.7 Sonnet 发布：推理能力再进化，编码效率突破天际！",
           "Deepseek行业资讯/2025-02/DeepSeek被封杀了",
           "Deepseek行业资讯/2025-02/DeepSeek宣布涨价！",
           "Deepseek行业资讯/2025-02/DeepSeek，紧急声明",
