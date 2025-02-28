@@ -1,10 +1,10 @@
 # 💗用 DeepSeek 给对象做个网站，她一定感动坏了
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114000545193602&bvid=BV1NYKPebEyT&cid=28382921627&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="450"></iframe>
+> 本文对应视频，观看体验更好哦：[https://bilibili.com/video/BV1NYKPebEyT](https://bilibili.com/video/BV1NYKPebEyT)
 
 大家好，我是程序员鱼皮。又是一年特殊的日子，作为一名程序员，总是幻想着自己有对象， 总是想着用自己贼拉牛 X 的编程技术给对象做个网站。
 
-> 本文对应视频，观看体验更好哦：https://bilibili.com/video/BV1NYKPebEyT
+
 
 要是在以前，我会直接复制一个开源项目，然后修改代码把名称改成自己的。像我几年前就给大家分享过一个开源的表白网站源码：
 
