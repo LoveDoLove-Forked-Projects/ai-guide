@@ -1,6 +1,6 @@
 # 2分钟学会 DeepSeek API，竟然比官方更好用！
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114035290870486&bvid=BV1zVAHesEv7&cid=28486470950&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="450"></iframe>
+> 建议观看视频版教程：[https://bilibili.com/video/BV1zVAHesEv7](https://bilibili.com/video/BV1zVAHesEv7)
 
 大家好，我是程序员鱼皮。最近 DeepSeek AI 太火了，效果也很强，但致命问题是 **不稳定**， 经常给我返回 `服务器繁忙，请稍后再试`，甚至让我怀疑自己被杀熟了。
 
@@ -19,8 +19,6 @@
 我们可以使用第三方平台提供的接口服务，大公司帮我们部署了满血版 DeepSeek，我们直接通过 API 调用就行。下面只需 2 分钟，教你如何使用 API 来调用满血版的 DeepSeek！
 
 学会之后，可以接入 DeepSeek AI 到自己项目中、写到简历上，面试官看到也会眼前一亮~
-
-> 建议观看视频版教程：https://bilibili.com/video/BV1zVAHesEv7
 
 ## 第三方平台选择
 
