@@ -34,18 +34,28 @@ function generateSidebarConfig(dirPath) {
     });
     // 处理文件
     if (files.length > 0) {
-      const filePaths = files.map((file) => {
+      // 创建包含文件路径和创建时间的对象数组
+      const fileInfos = files.map((file) => {
+        const fullPath = path.join(currentPath, file.name);
         const filePath = relativePath
           ? `${relativePath}/${file.name.replace(".md", "")}`
           : file.name.replace(".md", "");
-        return filePath;
+        const stats = fs.statSync(fullPath);
+        return {
+          path: filePath,
+          birthtime: stats.birthtime,
+        };
       });
-      // 将文件路径添加到 config 中
 
-      filePaths
-        .sort((a, b) => a.length - b.length)
-        .forEach((filePath) => {
-          config.push(filePath);
+      // 按创建时间降序排序，最新的文件排在前面
+      fileInfos
+        .sort((a, b) => b.birthtime.getTime() - a.birthtime.getTime())
+        .forEach((fileInfo) => {
+          if (fileInfo.path.includes("🔥DeepSeek 小白快速上手指南")) {
+            config.unshift(fileInfo.path); // 将该文件放在最前面
+          } else {
+            config.push(fileInfo.path);
+          }
         });
     }
     if (directories.length > 0) {
@@ -81,15 +91,15 @@ try {
   // 检查目录是否存在
   const isExisting = fs.existsSync(targetDir);
   if (!isExisting) {
-    throw new Error(`目录 “${targetDir}” 不存在`);
+    throw new Error(`目录 "${targetDir}" 不存在`);
   }
   // 目录存在，生成 sidebar 配置数组
   const sidebarConfig = generateSidebarConfig(targetDir);
-  // 输出内容到 temp.ts 中
   const content = `
 export default ${JSON.stringify(sidebarConfig, null, 2)}
   `;
-  const fileName = "temp.ts";
+  const fileName = path.resolve(process.cwd(), ".vuepress/sidebars/ai.ts");
+
   fs.writeFileSync(fileName, content, "utf-8");
   // 提示生成成功
   console.log(`侧边栏配置已经生成到 ${fileName} 文件中`);

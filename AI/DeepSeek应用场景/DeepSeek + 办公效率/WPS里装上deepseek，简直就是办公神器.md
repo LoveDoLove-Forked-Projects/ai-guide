@@ -28,8 +28,6 @@
 
 ![img](https://pic1.zhimg.com/v2-6625a31c5f9a3ca230d2ab288c861a7c_1440w.jpg)
 
-**但！** 目前官方的API Key申请已经暂停开放，所以你可能白跑一趟……
-
 ### **方案二：腾讯云提供的DeepSeek-R1 API Key**
 
 这个方案更靠谱，可以去这里申请：**[https://curl.qcloud.com/T3M5yBHp](https://link.zhihu.com/?target=https%3A//curl.qcloud.com/T3M5yBHp)**相对稳定，推荐使用！
