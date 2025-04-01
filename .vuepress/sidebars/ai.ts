@@ -188,6 +188,7 @@ export default [
         "title": "2025-03",
         "collapsable": true,
         "children": [
+          "Deepseek行业资讯/2025-03/谷歌终于登顶一次了！最强推理模型Gemini 2.5 Pro实测体验，真的有点东西",
           "Deepseek行业资讯/2025-03/DeepSeek回答现在能不能入手黄金 将维持高位震荡",
           "Deepseek行业资讯/2025-03/DeepSeek官方辟谣：R2发布为假消息",
           "Deepseek行业资讯/2025-03/高校，为何最快拥抱DeepSeek？",
