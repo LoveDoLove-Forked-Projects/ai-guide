@@ -24,8 +24,13 @@ function generateContent(directory, dirName) {
   let content = `# ${dirName}\n\n`;
   content += `> 你全面的 AI 知识库，一网打尽最新 AI 资讯，都在 [https://ai.codefather.cn](https://ai.codefather.cn)\n\n`;
 
-  // 获取所有一级子目录
-  const subDirs = getSubDirectories(directory);
+  // 获取所有一级子目录并按创建时间排序，最新的放在前面
+  const subDirs = getSubDirectories(directory).sort((a, b) => {
+    const statA = fs.statSync(a);
+    const statB = fs.statSync(b);
+    return statB.birthtime.getTime() - statA.birthtime.getTime();
+  });
+
   if (subDirs.length > 0) {
     // 循环处理每个一级子目录
     for (const subDir of subDirs) {

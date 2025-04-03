@@ -59,7 +59,22 @@ function generateSidebarConfig(dirPath) {
         });
     }
     if (directories.length > 0) {
-      directories.forEach((dir) => {
+      // 创建包含目录信息和创建时间的对象数组
+      const dirInfos = directories.map((dir) => {
+        const subDirectoryPath = path.join(currentPath, dir.name);
+        const stats = fs.statSync(subDirectoryPath);
+        return {
+          dir: dir,
+          birthtime: stats.birthtime,
+        };
+      });
+
+      // 按创建时间降序排序，最新的目录排在前面
+      dirInfos.sort((a, b) => b.birthtime.getTime() - a.birthtime.getTime());
+
+      // 处理排序后的目录
+      dirInfos.forEach((dirInfo) => {
+        const dir = dirInfo.dir;
         const subDirectoryPath = path.join(currentPath, dir.name);
         const newRelativePath = relativePath ? `${relativePath}/${dir.name}` : dir.name;
 
