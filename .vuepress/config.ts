@@ -1,30 +1,30 @@
 import { defineConfig } from "vuepress/config";
+import extraSideBar from "./extraSideBar";
+import footer from "./footer";
 import navbar from "./navbar";
 import sidebar from "./sidebar";
-import footer from "./footer";
-import extraSideBar from "./extraSideBar";
 
 const author = "程序员鱼皮";
 const domain = "https://ai.codefather.cn";
 const tags = [
   "ai",
   "deepseek",
-  "AI资讯",
+  "AI 资讯",
   "人工智能",
-  "AI行业趋势",
-  "AI技术",
-  "AI新闻",
-  "AI动态",
-  "AI市场分析",
-  "AI模型",
-  "AI独家分析",
-  "AI深度解读",
+  "AI 行业趋势",
+  "AI 技术",
+  "AI 新闻",
+  "AI 动态",
+  "AI 市场分析",
+  "AI 模型",
+  "AI 独家分析",
+  "AI 深度解读",
 ];
 
 export default defineConfig({
   title: "鱼皮 AI 知识库",
   description:
-    "鱼皮 AI 知识库 - 免费 DeepSeek 教程｜工具站｜资源库，是一站式开源免费的人工智能知识分享平台，汇集Deepseek、GPT等热门AI工具介绍、使用指南、技巧分享、应用场景、AI变现、行业资讯、教程资源汇总，提供系统化的AI教程、精选AI资源，助你快速掌握AI技术，成为AI专家！",
+    "鱼皮 AI 知识库 - 免费 DeepSeek 教程｜工具站｜资源库，是一站式开源免费的人工智能知识分享平台，汇集 Deepseek、GPT 等热门 AI 工具介绍、使用指南、技巧分享、应用场景、AI 变现、行业资讯、教程资源汇总，提供系统化的 AI 教程、精选 AI 资源，助你快速掌握 AI 技术，成为 AI 专家！",
   head: [
     // 站点图标
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -34,7 +34,7 @@ export default defineConfig({
       {
         name: "keywords",
         content:
-          "ai, deepseek, AI资讯, 人工智能, AI行业趋势, AI技术, AI新闻, AI动态, AI市场分析, AI模型, AI独家分析, AI深度解读",
+          "ai, deepseek, AI 资讯，人工智能，AI 行业趋势，AI 技术，AI 新闻，AI 动态，AI 市场分析，AI 模型，AI 独家分析，AI 深度解读",
       },
     ],
     // 百度统计
@@ -45,7 +45,7 @@ export default defineConfig({
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          hm.src = "https://hm.baidu.com/hm.js?6998d638562bceef30be297767e91d64";
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();

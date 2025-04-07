@@ -6,7 +6,7 @@
     "generate:readme": "node ./.vuepress/scripts/genReadme.js",
     "getMdNumber": "node ./.vuepress/scripts/getMdNumber.js",
     "docs:dev": "vuepress dev .",
-    "predocs:build": "npm run generate:sidebar ./AI && npm run generate:readme ./AI",
+    "pre-docs:build": "npm run generate:sidebar ./AI && npm run generate:readme ./AI",
     "docs:build": "vuepress build .",
     "serve": "serve ./.vuepress/dist"
   },
