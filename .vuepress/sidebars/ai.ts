@@ -47,6 +47,13 @@ export default [
     "collapsable": true,
     "children": [
         {
+          "title": "2025-09",
+          "collapsable": true,
+          "children": [
+            "AI行业资讯/2025-09/2025 年 9 月 AI 资讯汇总"
+          ]
+        },
+        {
             "title": "2025-08",
             "collapsable": true,
             "children": [
