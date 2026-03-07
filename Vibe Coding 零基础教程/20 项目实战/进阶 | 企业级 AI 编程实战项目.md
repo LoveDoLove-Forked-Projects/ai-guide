@@ -45,6 +45,56 @@
 
 
 
+### AI 热点监控工具
+
+基于 Express 5 + React 19 + OpenRouter + Socket.io 开发的 AI 热点监控工具，以 Vibe Coding 为核心，全程使用 VSCode + GitHub Copilot 进行 AI 编程。系统自动从 Twitter、Bing、B 站等 8+ 信息源聚合抓取内容，利用 AI 进行真假识别和相关性分析，通过 WebSocket 实时推送和邮件通知。还将热点监控能力封装为 Agent Skills 技能包。
+
+适合人群：想快速体验 Vibe Coding 全流程、学习工具类产品开发的同学，零基础也能跟着做。
+
+[👉🏻 点击开始学习](https://www.codefather.cn/course/2026625439052627970)
+
+技术亮点：
+
+- VSCode + GitHub Copilot AI 编程
+- MCP 插件（Firecrawl + Context7）
+- Agent Skills 开发
+- OpenRouter 统一接入多种大模型
+- 多数据源聚合爬虫
+- WebSocket 实时推送
+- Query Expansion 查询扩展
+- Aceternity UI 科技感前端
+
+
+
+![鱼皮 AI 热点监控工具项目](https://pic.yupi.icu/1/image-20260304102630302.png)
+
+
+
+### GitHub 文档翻译工具
+
+基于 Next.js + GitHub App + OpenRouter 开发的 GitHub 仓库 AI 文档翻译 SaaS 平台，以 Vibe Coding 为核心，全程使用 Cursor 进行 AI 编程。输入任意 GitHub 仓库地址，AI 自动将文档翻译成 20 种语言并创建 PR，还支持 Webhook 自动增量翻译。
+
+适合人群：想学 AI 编程做出海工具、SaaS 产品，掌握 GitHub App 开发的同学。
+
+[👉🏻 点击开始学习](https://www.codefather.cn/course/2014303010343092226)
+
+技术亮点：
+
+- Cursor AI 编程 + MCP 插件
+- Next.js 全栈一体化架构
+- GitHub App 安全授权
+- GitHub Webhook 增量翻译
+- OpenRouter 统一接入多种大模型
+- Prisma ORM 类型安全数据库
+- Ngrok 内网穿透调试
+- Vercel 一键部署上线
+
+
+
+![鱼皮 GitHub 文档翻译工具项目](https://pic.yupi.icu/1/1769079926879-90640105-2d23-418c-b4b5-e962eab31299-20260225144931498.png)
+
+
+
 ### AI 零代码应用生成平台
 
 基于 Spring Boot + LangChain4j + LangGraph4j + Vue 3 开发的企业级 AI 代码生成平台，对标大厂。这是一个以 AI 开发 + 后端架构为核心的微服务全栈项目，实战 AI 智能体、AI 工作流、多种设计模式、Spring Cloud + Dubbo 微服务架构、多维度系统优化等。
