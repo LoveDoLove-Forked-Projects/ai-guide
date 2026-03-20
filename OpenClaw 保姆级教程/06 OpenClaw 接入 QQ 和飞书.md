@@ -1,4 +1,4 @@
-# 接入 QQ 和飞书
+# OpenClaw 接入 QQ 和飞书
 
 > 把 OpenClaw 接入手机聊天软件，随时随地养虾
 

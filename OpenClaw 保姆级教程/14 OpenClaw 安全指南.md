@@ -1,4 +1,4 @@
-# 安全指南
+# OpenClaw 安全指南
 
 > 玩 OpenClaw 的安全红线和避坑指南
 

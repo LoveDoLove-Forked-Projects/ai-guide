@@ -1,4 +1,4 @@
-# Skills 技能系统
+# OpenClaw Skills 技能系统
 
 > 给 AI 装能力扩展包，从发现到安装全流程
 
