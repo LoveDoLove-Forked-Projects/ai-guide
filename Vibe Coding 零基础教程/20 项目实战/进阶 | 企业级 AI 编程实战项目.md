@@ -45,6 +45,31 @@
 
 
 
+### AI 万能视频下载总结器
+
+基于 Vue 3 + FastAPI + yt-dlp + DeepSeek + Stripe 开发的 AI 万能视频下载总结器，以 Vibe Coding 为核心，全程使用 Cursor 进行 AI 编程。支持从 B 站、YouTube、抖音等 1800+ 平台下载视频，AI 自动提取字幕并生成总结摘要、交互式思维导图和视频问答，还集成了 JWT 用户认证和 Stripe 国际支付，是一个真正能上线变现的 SaaS 产品。
+
+适合人群：想学 AI 编程做工具类产品并实现商业变现、掌握 Python 后端开发和国际支付的同学。
+
+[👉🏻 点击开始学习](https://www.codefather.cn/course/2027618983506640897)
+
+技术亮点：
+
+- Cursor AI 编程 + MCP 插件 + Agent Skills
+- SubAgents 子代理并行开发
+- yt-dlp 多平台视频下载引擎
+- DeepSeek 大模型 AI 总结和问答
+- SSE 流式数据传输
+- Stripe 国际支付 + Webhook
+- JWT 用户认证和权限控制
+- SEO 和 GEO 搜索优化
+
+
+
+![鱼皮 AI 万能视频下载总结器项目](https://pic.yupi.icu/1/AI%E4%B8%87%E8%83%BD%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%99%A8%E4%B8%BB%E9%A1%B5.png)
+
+
+
 ### AI 热点监控工具
 
 基于 Express 5 + React 19 + OpenRouter + Socket.io 开发的 AI 热点监控工具，以 Vibe Coding 为核心，全程使用 VSCode + GitHub Copilot 进行 AI 编程。系统自动从 Twitter、Bing、B 站等 8+ 信息源聚合抓取内容，利用 AI 进行真假识别和相关性分析，通过 WebSocket 实时推送和邮件通知。还将热点监控能力封装为 Agent Skills 技能包。
