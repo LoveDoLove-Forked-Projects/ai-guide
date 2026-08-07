@@ -8,9 +8,29 @@
 
 其实 Claude Code 和 Codex 都支持切换模型，咱们用国内的大模型（比如 DeepSeek、Qwen、智谱 GLM）来驱动它们就行，量大管饱，不用魔法，也不怕封号。
 
-这篇文章我就手把手教你，用一个开源神器 **CC Switch**，几分钟带你把国内模型接到 Claude Code 和 Codex 里。我会以 DeepSeek 为例，看完你就能跑通整套流程，想换哪家模型都是一样的操作。
+这篇文章我就手把手教你把国内模型接到 Claude Code 和 Codex 里。我会以 DeepSeek 为例，看完你就能跑通整套流程，想换哪家模型都是一样的操作。
 
 点个收藏，咱们开始~
+
+
+
+## 为什么推荐 DeepSeek
+
+在动手之前，先说说为什么我拿 DeepSeek 来举例。
+
+DeepSeek-V4-Flash 这个模型主打性价比，输入 1 元 / 百万 token、输出 2 元 / 百万 token，大概只有 V4-Pro 十分之一的价格。
+
+![](https://pic.yupi.icu/1/image-20260803152949072.png)
+
+重点是它在 Agent 能力上做了大幅强化，在专门测试 AI 自主执行终端任务的 Terminal-Bench 上拿到了 82.7 分，竟然反超了自家的 V4-Pro 预览版（72.1 分），写代码、调工具、自主执行任务都很能打。
+
+![](https://pic.yupi.icu/1/HOiZba2aYAAozFz.jpeg)
+
+Agent 能力强、价格又便宜，用来驱动 Claude Code 和 Codex 学习 AI 编程，性价比是最高的。
+
+**而且更香的是，它原生支持了 Responses API，可以直接接入 Codex，不需要任何协议转换。** 这一点后面配置的时候你会体会到有多省事。
+
+当然，如果你已经买了其他平台的套餐，比如智谱 GLM、Qwen、Kimi、MiniMax，操作思路完全一样，把 Base URL 和 API Key 换成对应平台的就行。
 
 
 
@@ -104,7 +124,9 @@ npm install -g @anthropic-ai/claude-code
 
 ![](https://pic.yupi.icu/1/1780310750547-43515207-6f23-45b7-a62f-56370070da4f.png)
 
-其余字段基本不用动，CC Switch 的 DeepSeek 预设已经帮你把模型都配好了，里面内置了 DeepSeek-V4-Pro 和 DeepSeek-V4-Flash 两个版本，主模型默认就是 Pro，相比 Flash，它的 Agent 能力和复杂推理更强，更适合写代码。
+其余字段基本不用动，CC Switch 的 DeepSeek 预设已经帮你把模型都配好了，里面内置了 DeepSeek-V4-Pro 和 DeepSeek-V4-Flash 两个版本。主模型默认是 Pro（对应 Claude Code 里的 Opus 位），小模型是 Flash（对应 Haiku 位）。
+
+如果你想省钱又够用，直接全部用 V4-Flash 也完全没问题，它的 Agent 能力已经很强了。
 
 如果你想用上 DeepSeek V4 的百万 tokens 超长上下文，还能在这里直接勾选开启 1M 模式，告诉 Claude Code 这个模型能吃下这么长的上下文，不用自己去改配置。
 
@@ -128,9 +150,9 @@ AI 能正常给出回复，就说明切换成功了：
 
 
 
-## 二、把 DeepSeek 接到 Codex
+## 把 DeepSeek 接入 Codex
 
-搞定 Claude Code，我们再来看 Codex。它是 OpenAI 推出的 AI 编程工具，最近的热度堪称炸裂。
+搞定 Claude Code，我们再来看 Codex。它是 OpenAI 推出的 AI 编程工具，最近的热度堪称炸裂，经常赠送重置额度，使劲蹬都蹬不完。
 
 ![](https://pic.yupi.icu/1/1780311345253-521a8636-47ec-4d53-bb1a-e350748e2085-20260601194352039.png)
 
@@ -142,7 +164,7 @@ Codex 有两种形态，一种是在终端里跑的命令行版 Codex CLI，一�
 npm install -g @openai/codex
 ```
 
-装好后在终端输入 `codex` 就能进入对话界面，首次使用同样需要登录 OpenAI 账号。没有账号的话，就要用 CC Switch 来切换模型。
+装好后在终端输入 `codex` 就能进入对话界面，首次使用同样需要登录 OpenAI 账号。没有账号的话，就要自己折腾一下切换个模型。
 
 ![](https://pic.yupi.icu/1/1780311431037-8b655299-d1f1-4ff5-a845-988c0980c4ca.png)
 
@@ -150,33 +172,123 @@ npm install -g @openai/codex
 
 ![](https://pic.yupi.icu/1/image-20260601194545597.png)
 
+给 Codex 接 DeepSeek 有 3 种方法，我按推荐程度依次介绍。
 
 
-### Codex 接入原理
 
-既然 Codex 的配置都放在 `~/.codex/config.toml` 这个文件里，那我直接把里面的接口地址 `base_url` 改成 DeepSeek 的不就行了？
+### 方法 1、官方一键脚本（推荐）
 
-能想到这说明你很聪明，但是这么干大概率会翻车，直接给你报一个 404 错误。
+DeepSeek 官方提供了一个配置脚本，跑一下就能全部搞定。
 
-问题出在协议上。Codex 用的是 OpenAI 的 **Responses API**，而 DeepSeek 这些国内模型走的是 **Chat Completions API**，这俩压根儿不是一套东西。就好比你打电话，号码是拨通了，可你说中文、对方只懂法语，照样聊不到一块儿去。
+在运行之前，确保你已经安装了 Codex CLI 或者 ChatGPT 桌面 APP，并且至少启动过一次，让它生成好 `~/.codex` 配置目录，脚本要往里面写东西。
+
+> 官方文档参考：[https://api-docs.deepseek.com/quick_start/agent_integrations/codex/](https://api-docs.deepseek.com/quick_start/agent_integrations/codex/)
+
+Windows 用户在 PowerShell 执行：
+
+```powershell
+irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex
+```
+
+Mac 或 Linux 用户在终端执行：
+
+```bash
+bash <(curl -fsSL https://cdn.deepseek.com/api-docs/codex-deepseek-setup.sh)
+```
+
+脚本启动后会让你选择要用的模型，目前 DeepSeek-V4-Flash 已经可以直接选了，输入「1」就好：
+
+![](https://pic.yupi.icu/1/image-20260803114529569.png)
+
+首次运行时，它还会让你输入 API Key：
+
+![](https://pic.yupi.icu/1/image-20260803114842807.png)
+
+然后按回车键执行，唰唰唰，脚本就帮我们把 DeepSeek 接入到 Codex 中了。
+
+![](https://pic.yupi.icu/1/image-20260803114928055.png)
+
+多说几句，这个脚本会自动完成下面几件事：
+
+1. 把你现有的 Codex 配置备份到 `~/.codex/backup-deepseek/` 目录，随时可以恢复
+2. 生成一个 `~/.codex/models.json` 文件，告诉 Codex 关于 DeepSeek 模型的元数据（上下文窗口大小、支持的推理等级等等）
+3. 修改 `~/.codex/config.toml`，写入 DeepSeek 的接口配置，你之前设置的 MCP 服务器和项目配置都会保留
+4. 自动校验配置语法，如果有错就中止，不会损坏你的文件
+
+配置完成后，重新打开 Codex，启动横幅如果显示 `deepseek-v4-flash`，就说明配好了：
+
+![](https://pic.yupi.icu/1/image-20260803120531949.png)
+
+如果你用的是 ChatGPT 桌面 APP 或者 Codex 的 VS Code 插件，不用单独配置，直接打开就能用 DeepSeek 模型了，因为它们和 CLI 版共用同一套配置文件。
+
+![](https://pic.yupi.icu/1/image-20260803141956962.png)
+
+想切换回官方模型的话，重新跑一遍脚本，在菜单里选恢复选项就行。
+
+![](https://pic.yupi.icu/1/image-20260803115518337.png)
+
+
+
+### 方法 2、手动编辑配置文件
+
+如果你不想跑脚本，也可以自己手动修改配置文件，两步就能搞定。
+
+第一步，在电脑的用户目录下找到 `.codex` 文件夹（Mac / Linux 路径是 `~/.codex/`，Windows 是 `%USERPROFILE%\.codex\`），创建一个 `models.json` 文件，文件中的内容可以到 [DeepSeek 官方文档](https://api-docs.deepseek.com/zh-cn/quick_start/agent_integrations/codex/) 复制。
+
+![](https://pic.yupi.icu/1/image-20260803113859064.png)
+
+这个文件的作用是告诉 Codex 关于 DeepSeek 模型的各种参数信息，比如支持 100 万 token 的上下文窗口、支持 low / high / max 三档推理深度等。
+
+第二步，在同一个目录下编辑 `config.toml` 文件，添加下面这段配置：
+
+```toml
+model = "deepseek-v4-flash"
+model_provider = "deepseek"
+preferred_auth_method = "apikey"
+forced_login_method = "api"
+model_reasoning_effort = "high"
+model_catalog_json = "~/.codex/models.json"
+
+[model_providers.deepseek]
+name = "deepseek"
+base_url = "https://api.deepseek.com/"
+wire_api = "responses"
+experimental_bearer_token = "<你的 DeepSeek API Key>"
+```
+
+把其中的 `experimental_bearer_token` 换成你自己的 API Key 就行。
+
+这里的关键是 `wire_api = "responses"`，它告诉 Codex 用 Responses API 协议跟 DeepSeek 通信，而 DeepSeek-V4-Flash 原生就支持这个协议，所以能直接跑通。
+
+保存文件后重新打开 Codex，就能用 DeepSeek-V4-Flash 了。
+
+
+
+### 方法 3、用 CC Switch 做协议转换
+
+前面两种方法之所以这么省事，全靠 DeepSeek 官方做了原生适配。但如果你想接的是智谱 GLM、Kimi、MiniMax 这些还不支持 Responses API 的模型，只改 `base_url` 大概率会翻车，直接给你报一个 404 错误。
+
+问题出在协议上。Codex 用的是 OpenAI 的 **Responses API**，而大多数国内模型走的是 **Chat Completions API**，这俩压根儿不是一套东西。就好比你打电话，号码是拨通了，可你说中文、对方只懂法语，照样聊不到一块儿去。
 
 ![](https://pic.yupi.icu/1/01_%E7%94%B5%E8%AF%9D%E6%AF%94%E5%96%BB-%E5%8D%8F%E8%AE%AE%E6%A0%BC%E5%BC%8F%E4%B8%8D%E9%80%9A_compressed_v2.png)
 
-所以 Codex 接国内模型，关键在于中间得有个「翻译」，把 Codex 发出的请求转换成 DeepSeek 能听懂的格式。
+所以这种情况下，关键在于中间得有个「翻译」，把 Codex 发出的请求转换成模型能听懂的格式。
 
 好在 CC Switch 已经把这件事给我们办妥了。它的「本地路由」功能会在你电脑上起一个轻量级的代理服务，请求的流转过程是这样的：
 
 ```plain
-Codex → CC Switch → DeepSeek → CC Switch → Codex
+Codex → CC Switch → 大模型 → CC Switch → Codex
 ```
 
-整个转发对 Codex 完全透明，它自己还以为在访问 OpenAI 官方接口呢，实际上请求已经被 CC Switch 偷偷转给 DeepSeek 了。这样既保留了 Codex 的原汁原味体验，又能用上便宜的国内模型，岂不美哉？
+整个转发对 Codex 完全透明，它自己还以为在访问 OpenAI 官方接口呢。这样既保留了 Codex 的原汁原味体验，又能用上便宜的国内模型，岂不美哉？
 
 ![](https://pic.yupi.icu/1/02_CC_Switch%E6%9C%AC%E5%9C%B0%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E8%BD%AC%E6%8D%A2%E6%B5%81%E7%A8%8B_compressed_v3.png)
 
+下面还是用 DeepSeek 来演示这个流程（截图现成），你换成其他供应商的操作步骤完全一样。
 
 
-### 用 CC Switch 配置
+
+#### 1、在 CC Switch 里添加供应商
 
 打开 CC Switch，在顶部应用栏切换到 **Codex**，点击「添加供应商」：
 
@@ -206,7 +318,7 @@ Codex → CC Switch → DeepSeek → CC Switch → Codex
 
 
 
-### 开启本地路由
+#### 2、开启本地路由
 
 切换到 DeepSeek 后，系统会提示你开启路由。点击左上角的「设置」按钮进入设置页面：
 
@@ -236,26 +348,50 @@ Codex → CC Switch → DeepSeek → CC Switch → Codex
 
 怎么样，是不是比想象中简单多了？
 
-可能你已经买了其他平台的 Coding Plan，比如智谱 GLM、Qwen、Kimi、MiniMax 等等。
-
-想对接别家大模型的话，操作几乎一模一样。在 CC Switch 里选对应的供应商预设（没有预设就自定义一个），把人家给你的专属 Base URL 和 API Key 填进去就行。对接 Claude Code 能直接生效，对接 Codex 时记得同样开启本地路由。
+换成其他供应商也是这套流程，在 CC Switch 里选对应的预设（没有预设就自定义一个），把人家给你的专属 Base URL 和 API Key 填进去，别忘了开启本地路由。
 
 
 
-## 最后哔哔
+## 给纯文本模型加上看图能力
 
-看到这里你会发现，现在学 AI 编程的门槛真的低到不能再低了。
+配置完成之后，还有一个坑要提醒你。
 
-一个开源工具 + 国内大模型，几分钟就能把官方收费、还要魔法的 Claude Code、Codex 跑起来，成本可能就是官方的零头。说真的，工具和模型都不该成为你学习路上的拦路虎。
+DeepSeek-V4-Flash 虽然 Agent 能力很强，但它是纯文本模型，不能理解图片。如果你在 Codex 或 Claude Code 中让它分析一张截图、看一下 UI 界面长什么样，它是做不到的。
 
-所以别再用「我没账号、用不起」当借口了，配好环境，赶紧上手把工具用起来才是。
+不过这个问题也有现成的解决方案，就是给你的 AI 编程工具装一个 **Vision Skill**，用另一个多模态视觉模型来帮它看图。
+
+比如这个通用的 [多模态视觉识别 Skill](https://github.com/asuojun/claude-vision-skill)，专门就是为 DeepSeek 这类没有视觉能力的模型设计的。而且由于 Skill 是通用标准，Codex 和 Claude Code 等各种 AI 编程工具都能安装使用。
+
+你需要先准备一个支持图片理解的视觉模型，比如通义千问的 Qwen3.8-Max，并且到对应的大模型平台获取到 API Key。
+
+![](https://pic.yupi.icu/1/image-20260803154236012.png)
+
+然后直接在 AI 编程工具中发一段提示词，让 AI 帮你完成 Skill 的安装和配置：
+
+```plain
+全局安装 Vision Skill（https://github.com/asuojun/claude-vision-skill），按照 README 的说明进行配置。
+- 视觉模型用通义千问的 qwen3.8-max
+- API Key 为 <改为你自己的 API Key>
+```
+
+![](https://pic.yupi.icu/1/image-20260803155552049.png)
+
+安装好之后，当 AI 遇到需要看图的任务时，Vision Skill 就会自动把图片发给视觉模型，让它把图片内容转成文字描述，再交给 DeepSeek 继续推理。
+
+![](https://pic.yupi.icu/1/image-20260803155836402.png)
+
+如果你平时写代码不怎么需要 AI 看图，这一步可以先跳过，等用到的时候再装也来得及。想深入了解 Skills 的用法，可以阅读本教程编程工具板块「工具实战」目录中的《Agent Skills：通用 AI 技能库》。
 
 
 
 ## 写在最后
 
-这篇文章手把手带大家用 CC Switch 把国内大模型（以 DeepSeek 为例）接入了 Claude Code 和 Codex，从安装工具到配置模型再到开启路由，几分钟就能跑通。
+这篇文章手把手带大家把国内大模型（以 DeepSeek 为例）接入了 Claude Code 和 Codex。
 
-学会了这些内容，你就能用便宜的国内模型来驱动主流 AI 编程工具，不用再因为账号和成本问题而止步不前。
+给 Codex 接 DeepSeek 首选官方一键脚本，因为 DeepSeek 原生支持了 Responses API，不需要任何协议转换；如果要接的模型不支持这个协议，就用 CC Switch 的本地路由来做转换。给 Claude Code 接模型更简单，因为国内主流模型基本都提供了兼容 Anthropic 协议的接口，用 CC Switch 点几下就好。
 
-如果你想继续学习 AI 编程的更多实战技巧，可以阅读本教程经验技巧板块的其他文章。
+看到这里你会发现，现在学 AI 编程的门槛真的低到不能再低了。百万 token 上下文、Agent 能力拉满、价格还便宜到离谱，成本可能只是官方订阅的零头。
+
+**工具和模型，都不该成为你学习路上的拦路虎。**
+
+所以别再用「我没账号、用不起」当借口了，配好环境，赶紧上手把工具用起来才是。至于该选哪个模型来干哪种活，可以阅读本教程编程工具板块中的《AI 模型选择指南》；如果你想搞清楚 Claude Code 为什么会封号、有哪些替代方案，可以阅读本目录中的《Claude Code 封号机制和应对方案》。

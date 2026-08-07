@@ -356,6 +356,7 @@ Skills 的社区也非常活跃，你可以在以下地方找到很多现成的�
 - ⭐️ [鱼皮 AI 导航 - Skills 大全](https://ai.codefather.cn/skills)：持续更新优质技能，释放 AI 执行潜力
 - [Claude Skills Hub 市场](https://www.claudeskill.site/zh/skills)：社区技能市场
 - [Awesome Claude Skills](https://github.com/ComposioHQ/awesome-claude-skills)：开源技能列表
+- [mattpocock/skills](https://github.com/mattpocock/skills)：18 万 Star 的个人技能库，把测试驱动开发、Bug 诊断等软件工程方法论封装成了 Skill，详细介绍可以阅读本目录中的《Matt Pocock Skills：真实工程技能库》
 
 ![](https://pic.yupi.icu/1/image-20260201150711260.png)
 
