@@ -95,6 +95,32 @@
 
 
 
+### AI 闯关学习小程序
+
+基于 Taro 4 + Python FastAPI + LangChain + LangGraph + DeepSeek 开发的微信小程序，用户输入想学的知识，AI 自动联网搜索出题，边闯关边讲解，答完给出复盘报告。以 Vibe Coding 为核心，全程使用 GitHub Copilot + Claude Code 进行 AI 编程。实战 Taro 跨端小程序框架、DeepSeek 大模型出题、Tavily 联网搜索 Agent、Chroma 向量库 RAG 知识库、AI 生图 + 腾讯云 COS 对象存储，用 OpenSpec 规范驱动开发 + Harness Engineering 驾驭 AI 编程流程，最后走完小程序备案、审核和发布上线。
+
+适合人群：想学 AI 编程做小程序产品并实现商业变现、掌握 Python + AI 应用开发全流程的同学，零基础也能跟着做。
+
+[👉🏻 点击开始学习](https://www.codefather.cn/course/2037104890135748610)
+
+技术亮点：
+
+- GitHub Copilot + Claude Code AI 编程
+- MCP 插件（Firecrawl + Context7 + Playwright）
+- Agent Skills 能力扩展
+- OpenSpec 规范驱动开发
+- Taro 4 跨端小程序框架
+- LangChain + LangGraph ReAct Agent
+- Chroma 向量库 RAG 知识库
+- AI 生图 + 腾讯云 COS 对象存储
+- Docker 容器化 + 微信云托管部署
+
+
+
+![鱼皮 AI 闯关学习小程序项目](https://pic.yupi.icu/1/1-project-demo-overview.png)
+
+
+
 ### GitHub 文档翻译工具
 
 基于 Next.js + GitHub App + OpenRouter 开发的 GitHub 仓库 AI 文档翻译 SaaS 平台，以 Vibe Coding 为核心，全程使用 Cursor 进行 AI 编程。输入任意 GitHub 仓库地址，AI 自动将文档翻译成 20 种语言并创建 PR，还支持 Webhook 自动增量翻译。
